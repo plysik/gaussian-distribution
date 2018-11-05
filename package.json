@@ -1,5 +1,6 @@
 {
   "name": "gaussian-distribution",
+  "homepage": "https://plysik.github.io/gaussian-distribution/public/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
