@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
+import { connect } from "react-redux";
+
 class Header extends PureComponent {
   render() {
     return (
@@ -16,13 +18,12 @@ class Header extends PureComponent {
   }
 }
 Header.propTypes = {
-  rollCount: PropTypes.number,
-  diceCount: PropTypes.number,
-  diceMax: PropTypes.number
+  rollCount: PropTypes.number.isRequired,
+  diceCount: PropTypes.number.isRequired,
+  diceMax: PropTypes.number.isRequired
 };
-Header.defaultProps = {
-  rollCount: 1000,
-  diceCount: 3,
-  diceMax: 6
+const mapStateToProps = (state, ownProps) => {
+  return { ...state.toJS() };
 };
-export default Header;
+
+export default connect(mapStateToProps)(Header);
