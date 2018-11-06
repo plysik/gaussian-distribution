@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { withStyles, TextField, Grid } from "@material-ui/core";
+import { withStyles, TextField, Grid, Button } from "@material-ui/core";
 import classNames from "classnames";
 import Actions, { actionBuilder } from "../actions";
 import { capitalize } from "../utils/strings";
-import { optimize } from "../utils/events";
 
 class Form extends Component {
   bindOnChange = field => {
@@ -56,6 +54,11 @@ class Form extends Component {
               onChange={this.bindOnChange("diceMax")}
             />
           </Grid>
+          <Grid item>
+            <Button variant="contained" color="secondary">
+              Recalculate
+            </Button>
+          </Grid>
         </Grid>
       </form>
     );
@@ -84,7 +87,8 @@ const styles = theme => ({
   },
   menu: {
     width: 200
-  }
+  },
+  gridItem: {}
 });
 
 export default withStyles(styles)(connect(mapStateToProps)(Form));

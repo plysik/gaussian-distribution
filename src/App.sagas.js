@@ -1,23 +1,12 @@
-import {
-  take,
-  put,
-  select,
-  fork,
-  cancel,
-  takeLatest,
-  all
-} from "redux-saga/effects";
+import { put, takeLatest } from "redux-saga/effects";
 import Actions, { actionBuilder } from "./actions";
 function* updateDiceCount(action) {
-  // debugger;
   yield put(actionBuilder(Actions.updateDiceCountCompleted, action.payload));
 }
 function* updateDiceMax(action) {
-  // debugger;
   yield put(actionBuilder(Actions.updateDiceMaxCompleted, action.payload));
 }
 function* updateRollCount(action) {
-  // debugger;
   yield put(actionBuilder(Actions.updateRollCountCompleted, action.payload));
 }
 export default function* rootSaga() {
